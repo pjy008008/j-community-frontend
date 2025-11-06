@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# J-Community
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> "잘 정돈된 UI는 선한 유저를 만든다."
+>
+> '깨진 유리창 효과'를 방지하고, 시각적 신뢰도를 높여
+> 건강한 소셜 뉴스 커뮤니티를 지향하는 프론트엔드 프로젝트입니다.
 
-## Available Scripts
+## 1. 프로젝트 동기
 
-In the project directory, you can run:
+현재 한국의 많은 커뮤니티 사이트들은 '무관리'에서 오는 혼란스러움을 특징으로 하기도 합니다. 물론 그 안의 자유로움도 있지만, 때로는 정보의 신뢰성을 낮추고 사용자의 피로감을 높입니다.
 
-### `npm start`
+저는 이러한 환경과 달리, 미국의 `Reddit`이 가진 장점에 주목했습니다. `Reddit`은 **소셜 뉴스 네트워크**로서의 정체성이 강하며, 잘 정돈된 UI와 시스템을 통해 사용자들이 콘텐츠에 더 집중하고 질서 있는 토론을 이어가는 모습을 보여줍니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+이 프로젝트는 **"한국에는 왜 Reddit과 같은 커뮤니티가 없을까?"** 라는 질문에서 시작되었습니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 2. 프로젝트의 핵심 철학
 
-### `npm test`
+> "깨진 유리창 효과(Broken Windows Theory)"
+>
+> 사소한 무질서를 방치하면, 이는 더 큰 혼란과 무질서로 이어집니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+이 이론은 웹사이트 UI에도 동일하게 적용됩니다. UI가 정돈되지 않고 관리가 안 되는 모습이라면, 사용자는 심리적으로 '이곳은 막 다루어도 되는 공간'이라 인식하게 되어 악의적인 글이나 무질서한 행동을 보이기 쉬워집니다.
 
-### `npm run build`
+반대로, **UI가 깔끔하고 잘 정돈되어 있다면** 사용자는 이곳을 '공식적'이고 '신뢰할 수 있는' 공간으로 인식하게 됩니다. 이는 사용자가 글을 작성할 때 조금 더 신중한 언어를 사용하도록 유도합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Nielsen Norman Group(NNG)의 연구에 따르면, 이러한 **시각적 신뢰도(Visual Credibility)** 는 사용자의 행동 규범에 직접적인 영향을 줍니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. 이 레포지토리의 목표
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+본 레포지토리는 J-Community의 **프론트엔드**를 담당하며, 다음과 같은 목표를 가집니다.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **신뢰도 높은 UI 구축**: 사용자에게 시각적인 안정감과 신뢰를 주어, 서비스의 격을 높이고 사용자의 긍정적인 행동을 유도합니다.
+2. **직관적인 사용자 경험(UX)**: Reddit의 장점을 벤치마킹하되, 한국 사용자에게 더 직관적이고 편리한 경험을 제공하여 몰입할 수 있는 환경을 만듭니다.
+3. **Full-Stack 관점에서의 개발**: 이 프로젝트는 백엔드와의 긴밀한 협업을 전제로 합니다. 단순히 화면을 그리는 것을 넘어, 백엔드 개발자가 데이터를 제공하기 쉽고, 프론트엔드 개발자가 데이터를 사용하기 쉬운 **협업하기 좋은 코드**를 지향합니다.
