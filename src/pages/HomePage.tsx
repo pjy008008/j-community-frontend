@@ -1,5 +1,11 @@
+import Feed from "@/components/Feed";
+
 const HomePage = () => {
-  return <></>;
+  return (
+    <>
+      <Feed />
+    </>
+  );
 };
 
 export default HomePage;
