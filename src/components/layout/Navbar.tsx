@@ -36,13 +36,6 @@ const Navbar = () => {
             <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
               <Bell className="h-5 w-5" />
             </Button>
-            <Button
-              className="hidden md:inline-flex gap-2 bg-gradient-primary hover:opacity-90 transition-opacity"
-              size="sm"
-            >
-              <Plus className="h-4 w-4" />
-              작성
-            </Button>
             <Button variant="outline" size="icon">
               <User className="h-5 w-5" />
             </Button>
