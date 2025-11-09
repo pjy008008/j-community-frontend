@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Users, Calendar, Shield } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 
 const trendingCommunities = [
   { name: "개발", members: "125k", trend: "+2.5k" },
@@ -29,10 +30,11 @@ const RightSidebar = () => {
         <p className="text-sm text-muted-foreground mb-4">
           다양한 주제의 커뮤니티에 참여하여 지식과 경험을 공유하세요.
         </p>
-
-        <Button className="w-full bg-gradient-primary hover:opacity-90 transition-opacity shadow-medium">
-          게시물 작성
-        </Button>
+        <Link to="/submit">
+          <Button className="w-full bg-gradient-primary hover:opacity-90 transition-opacity shadow-medium">
+            게시물 작성
+          </Button>
+        </Link>
       </Card>
 
       {/* Trending Communities */}
@@ -79,7 +81,7 @@ const RightSidebar = () => {
       {/* Platform Info */}
       <Card className="p-4">
         <h3 className="font-bold text-foreground mb-3">J-Community</h3>
-        
+
         <div className="space-y-3 text-sm">
           <div className="flex items-start gap-2">
             <Calendar className="h-4 w-4 text-primary mt-0.5" />
@@ -115,13 +117,22 @@ const RightSidebar = () => {
         <Separator className="my-3" />
 
         <div className="space-y-1">
-          <a href="#" className="text-xs text-muted-foreground hover:text-primary block">
+          <a
+            href="#"
+            className="text-xs text-muted-foreground hover:text-primary block"
+          >
             이용약관
           </a>
-          <a href="#" className="text-xs text-muted-foreground hover:text-primary block">
+          <a
+            href="#"
+            className="text-xs text-muted-foreground hover:text-primary block"
+          >
             개인정보처리방침
           </a>
-          <a href="#" className="text-xs text-muted-foreground hover:text-primary block">
+          <a
+            href="#"
+            className="text-xs text-muted-foreground hover:text-primary block"
+          >
             커뮤니티 가이드
           </a>
         </div>
