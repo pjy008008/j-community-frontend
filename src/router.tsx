@@ -7,6 +7,10 @@ import CreatePostPage from "./pages/CreatePostPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Auth from "./pages/Auth";
 import Communities from "./pages/Communities";
+import Messages from "./pages/Messages";
+import SubLayout from "./components/layout/SubLayout";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +28,24 @@ export const router = createBrowserRouter([
       {
         path: "submit",
         element: <CreatePostPage />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <SubLayout />,
+    children: [
+      {
+        path: "messages",
+        element: <Messages />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
       },
     ],
   },
