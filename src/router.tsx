@@ -12,6 +12,7 @@ import SubLayout from "./components/layout/SubLayout";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Trending from "./pages/Trending";
+import Explore from "./pages/Explore";
 
 export const router = createBrowserRouter([
   {
@@ -32,8 +33,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "trending",
-        element: <Trending />
-      }
+        element: <Trending />,
+      },
+      {
+        path: "explore",
+        element: <Explore />,
+      },
     ],
   },
   {
