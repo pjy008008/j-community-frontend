@@ -15,9 +15,9 @@ import { Separator } from "@/components/ui/separator";
 import { Link, useLocation } from "react-router-dom";
 
 const mainMenuItems = [
-  { icon: Home, label: "홈", active: true },
-  { icon: TrendingUp, label: "인기", active: false },
-  { icon: Compass, label: "탐색", active: false },
+  { icon: Home, label: "홈", path: "/" },
+  { icon: TrendingUp, label: "인기", path: "/trending" },
+  { icon: Compass, label: "탐색", path: "/explore" },
 ];
 
 const communities = [
@@ -36,18 +36,20 @@ const LeftSidebar = () => {
         <div className="p-4 space-y-1">
           {mainMenuItems.map((item, index) => {
             const Icon = item.icon;
+            const isActive = location.pathname === item.path;
             return (
-              <button
-                key={index}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                  item.active
-                    ? "bg-secondary text-foreground font-medium"
-                    : "text-muted-foreground hover:bg-secondary/50"
-                }`}
-              >
-                <Icon className="h-5 w-5" />
-                <span className="text-sm">{item.label}</span>
-              </button>
+              <Link key={index} to={item.path}>
+                <button
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-secondary text-foreground font-medium"
+                      : "text-muted-foreground hover:bg-secondary/50"
+                  }`}
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="text-sm">{item.label}</span>
+                </button>
+              </Link>
             );
           })}
         </div>
@@ -87,31 +89,37 @@ const LeftSidebar = () => {
 
         <div className="p-4 space-y-1">
           <Link to="/messages">
-            <button className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-              location.pathname === "/messages"
-                ? "bg-secondary text-foreground font-medium"
-                : "text-muted-foreground hover:bg-secondary/50"
-            }`}>
+            <button
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                location.pathname === "/messages"
+                  ? "bg-secondary text-foreground font-medium"
+                  : "text-muted-foreground hover:bg-secondary/50"
+              }`}
+            >
               <MessageSquare className="h-5 w-5" />
               <span className="text-sm">메시지</span>
             </button>
           </Link>
           <Link to="/profile">
-            <button className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-              location.pathname === "/profile"
-                ? "bg-secondary text-foreground font-medium"
-                : "text-muted-foreground hover:bg-secondary/50"
-            }`}>
+            <button
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                location.pathname === "/profile"
+                  ? "bg-secondary text-foreground font-medium"
+                  : "text-muted-foreground hover:bg-secondary/50"
+              }`}
+            >
               <Users className="h-5 w-5" />
               <span className="text-sm">프로필</span>
             </button>
           </Link>
           <Link to="/settings">
-            <button className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-              location.pathname === "/settings"
-                ? "bg-secondary text-foreground font-medium"
-                : "text-muted-foreground hover:bg-secondary/50"
-            }`}>
+            <button
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                location.pathname === "/settings"
+                  ? "bg-secondary text-foreground font-medium"
+                  : "text-muted-foreground hover:bg-secondary/50"
+              }`}
+            >
               <Settings className="h-5 w-5" />
               <span className="text-sm">설정</span>
             </button>
