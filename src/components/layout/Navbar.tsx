@@ -40,13 +40,15 @@ const Navbar = () => {
             >
               <MessageSquare className="h-5 w-5" />
             </Button> */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="hidden sm:inline-flex"
-            >
-              <Bell className="h-5 w-5" />
-            </Button>
+            <Link to="/notifications">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hidden sm:inline-flex"
+              >
+                <Bell className="h-5 w-5" />
+              </Button>
+            </Link>
             <Link to="/auth">
               <Button variant="outline" size="icon">
                 <User className="h-5 w-5" />
