@@ -33,13 +33,13 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
-            <Button
+            {/* <Button
               variant="ghost"
               size="icon"
               className="hidden sm:inline-flex"
             >
               <MessageSquare className="h-5 w-5" />
-            </Button>
+            </Button> */}
             <Button
               variant="ghost"
               size="icon"
