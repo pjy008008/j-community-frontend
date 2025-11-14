@@ -1,6 +1,7 @@
 import PostCard from "./PostCard";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Flame, Sparkles } from "lucide-react";
+import { useState } from "react";
 
 const posts = [
   {
@@ -84,18 +85,36 @@ const sortOptions = [
 ];
 
 const Feed = () => {
+  const [activeSort, setActiveSort] = useState<"인기" | "새글" | "급상승">("인기");
+
+  const sortedPosts = [...posts].sort((a, b) => {
+    if (activeSort === "새글") {
+      return b.id - a.id; // 최신순 (id가 높을수록 최신)
+    } else if (activeSort === "급상승") {
+      //추후 수정 가능
+      const scoreA = a.initialVotes + a.comments * 2;
+      const scoreB = b.initialVotes + b.comments * 2;
+      return scoreB - scoreA;
+    } else {
+      // 인기
+      return b.initialVotes - a.initialVotes;
+    }
+  });
+
   return (
     <div className="flex-1 max-w-3xl">
       {/* Sort Options */}
       <Card className="mb-4 p-2">
         <div className="flex gap-2">
-          {sortOptions.map((option, index) => {
+          {sortOptions.map((option) => {
             const Icon = option.icon;
+            const isActive = activeSort === option.label;
             return (
               <button
-                key={index}
+                key={option.label}
+                onClick={() => setActiveSort(option.label as "인기" | "새글" | "급상승")}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${
-                  index === 0
+                  isActive
                     ? "bg-secondary text-foreground font-medium"
                     : "text-muted-foreground hover:bg-secondary/50"
                 }`}
@@ -110,7 +129,7 @@ const Feed = () => {
 
       {/* Posts Feed */}
       <div className="space-y-3">
-        {posts.map((post) => (
+        {sortedPosts.map((post) => (
           <PostCard key={post.id} {...post} />
         ))}
       </div>
