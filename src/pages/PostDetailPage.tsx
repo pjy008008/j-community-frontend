@@ -12,6 +12,8 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Comment {
   id: number;
@@ -181,7 +183,11 @@ const PostDetail = () => {
                 {comment.timeAgo}
               </span>
             </div>
-            <p className="text-sm text-foreground mb-2">{comment.content}</p>
+            <div className="text-sm text-foreground mb-2 prose prose-sm dark:prose-invert max-w-none">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {comment.content}
+              </ReactMarkdown>
+            </div>
             <div className="flex items-center gap-3 text-muted-foreground">
               <button className="text-xs font-medium hover:text-foreground transition-colors">
                 답글
@@ -283,8 +289,10 @@ const PostDetail = () => {
                   </h1>
 
                   {/* Content */}
-                  <div className="text-foreground mb-4 whitespace-pre-wrap">
-                    {post.content}
+                  <div className="text-foreground mb-4 prose prose-sm dark:prose-invert max-w-none">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {post.content}
+                    </ReactMarkdown>
                   </div>
 
                   {/* Image */}
