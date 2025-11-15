@@ -219,7 +219,7 @@ const CommunityDetail = () => {
   const Icon = community.icon;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen w-full bg-background">
       <div className="container mx-auto px-4">
         <div className="flex gap-6">
           <main className="flex-1 max-w-3xl">
