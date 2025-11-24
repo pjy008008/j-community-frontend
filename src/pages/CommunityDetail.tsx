@@ -311,7 +311,7 @@ const CommunityDetail = () => {
           </main>
 
           {/* Right Sidebar - Community Info */}
-          <aside className="hidden xl:block w-80 h-[calc(100vh-4rem)] sticky top-20 space-y-4">
+          <aside className="hidden xl:block w-80 h-[calc(100vh-4rem)] sticky top-20 space-y-4 overflow-y-auto scrollbar-hide">
             <Card className="p-4">
               <h3 className="font-bold text-foreground mb-3">커뮤니티 정보</h3>
               
